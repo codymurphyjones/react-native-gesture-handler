@@ -39,6 +39,7 @@ const PublicPropTypes = {
   delayPressIn: PropTypes.number,
   delayPressOut: PropTypes.number,
   delayLongPress: PropTypes.number,
+  disallowInterruption: PropTypes.bool,
 };
 
 const InternalPropTypes = {
@@ -262,6 +263,7 @@ export default class GenericTouchable extends Component {
         }
         onGestureEvent={this.onGestureEvent}
         hitSlop={this.props.hitSlop}
+        disallowInterruption={this.props.disallowInterruption}
         {...this.props.extraButtonProps}>
         <Animated.View {...coreProps} style={this.props.style}>
           {this.props.children}
